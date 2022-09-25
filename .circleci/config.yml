@@ -23,7 +23,8 @@ jobs:
       - run: 
           name: "Echo an env variable that is part of your project"
           command: |
-            echo $MY_ENV_VAR
+            echo $MY_ENV_VAR > ~/myenv.txt
+      - run: cat ~/myenv.txt
 
 workflows:
   welcome:

@@ -7,13 +7,22 @@ jobs:
     steps:
       - run: echo "hello World to my lovely wife Okeke" > ~/output.txt
       - run: cat ~/output.txt
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+           - output.txt
+
+    
 
   print_world:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - attach_workspace:
+          at: /tmp/workspace
       - run: echo "This is the second job to print world in a file" > ~/printworld.txt
       - run: cat ~/printworld.txt
+      - run: cat output.txt
   print_pipeline:
     docker:
       - image: cimg/base:2020.01

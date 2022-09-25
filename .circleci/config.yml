@@ -18,6 +18,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
+      - checkout
       - attach_workspace:
           at: ~/
       - run: echo "This is the second job to print world in a file" > ~/printworld.txt

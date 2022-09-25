@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.circleci",
+    "\\.circleci\\ansible",
+    "\\.circleci\\ansible\\roles",
+    "\\.circleci\\ansible\\roles\\configure-prometheus-node-exporter",
+    "\\.circleci\\ansible\\roles\\configure-prometheus-node-exporter\\tasks"
+  ],
+  "SelectedNode": "\\frontend1",
+  "PreviewInSolutionExplorer": false
+}

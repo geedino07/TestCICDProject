@@ -25,7 +25,8 @@ jobs:
       - run: cat ~/printworld.txt
       - run: 
           name: confirm directory
-          command: | 
+          command: |
+              ls 
               ls ~/project
               ls ~/
       - run: cat ~/output.txt

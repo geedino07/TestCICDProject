@@ -29,6 +29,7 @@ jobs:
               ls 
               ls ~/project
               ls ~/
+              pwd
               ls ~/project/Gerald
       - run: cat ~/output.txt
   print_pipeline:

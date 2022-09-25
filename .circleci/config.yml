@@ -25,7 +25,7 @@ jobs:
       - run: 
           name: confirm directory
           command: | 
-              ls
+              ls ~/project
               ls ~/
       - run: cat ~/output.txt
   print_pipeline:

@@ -16,9 +16,9 @@ jobs:
       - run: cat ~/printworld.txt
   print_pipeline:
     docker:
-      - image: circleci/node:13.8.0
+      - image: cimg/base:2020.01
     steps:
-      - run: echo "My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>." > ~/pipeline.txt
+      - run: echo "My pipline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>." > ~/pipeline.txt
       - run: cat ~/pipeline.txt
       - run: 
           name: "Echo an env variable that is part of your project"

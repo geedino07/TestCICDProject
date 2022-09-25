@@ -5,10 +5,14 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo "hello World to my lovely wife Okeke" > ~/output.txt
-      - run: cat ~/output.txt
+      - run: 
+          name: make new directory
+          command: |
+            mkdir /tmp/testGerald  
+      - run: echo "hello World to my lovely wife Okeke" > /tmp/testGerald/output.txt
+      #- run: cat ~/output.txt
       - persist_to_workspace:
-          root: ~/
+          root: /tmp/testGerald
           paths:
            - output.txt
 
@@ -20,7 +24,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/
+          at: /tmp/testGerald  
       - run: echo "This is the second job to print world in a file" > ~/printworld.txt
       - run: cat ~/printworld.txt
       - run: 
@@ -31,7 +35,7 @@ jobs:
               ls ~/
               pwd
               ls ~/project/Gerald
-      - run: cat ~/output.txt
+      - run: cat /tmp/testGerald/output.txt
   print_pipeline:
     docker:
       - image: cimg/base:2020.01

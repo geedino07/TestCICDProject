@@ -20,6 +20,10 @@ jobs:
     steps:
       - run: echo "My pipeline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>." > ~/pipeline.txt
       - run: cat ~/pipeline.txt
+      - run: 
+          name: "Echo an env variable that is part of your project"
+          command: |
+            echo $MY_ENV_VAR
 
 workflows:
   welcome:

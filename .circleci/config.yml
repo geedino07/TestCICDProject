@@ -35,7 +35,11 @@ jobs:
               ls ~/
               pwd
               ls ~/project/Gerald
+              ls /tmp
+              ls /tmp/testGerald
       - run: cat /tmp/testGerald/output.txt
+
+
   print_pipeline:
     docker:
       - image: cimg/base:2020.01

@@ -42,6 +42,7 @@ jobs:
 
   print_pipeline:
     docker:
+    
       - image: cimg/base:2020.01
     steps:
       - run: echo "My pipline id is << pipeline.id >> and my git branch is << pipeline.git.branch >>." > ~/pipeline.txt
